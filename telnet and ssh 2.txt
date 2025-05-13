@@ -1,0 +1,221 @@
+#DHCP R1:
+enable
+config t
+ip dhcp pool R1-POOL
+network 192.168.1.0 255.255.255.0
+default-router 192.168.1.1
+dns-server 8.8.8.8
+exit
+
+#OSPF R1:
+enable
+config t
+router ospf 1
+network 192.168.1.0 0.0.0.255 area 1
+network 192.168.7.0 0.0.0.255 area 0
+network 192.168.13.0 0.0.0.255 area 0
+exit
+
+#telnet and ssh R1:
+enable
+config t
+! Set Domain name for SSH
+ip domain-name ccnalab.local
+! Generate SSH keys
+crypto key generate rsa
+line vty 0 1
+username ccna password cisco123
+line vty 0 1
+username ccnp password cisco123
+! You can use transport input telnet or ssh or all
+transport input all
+! login local is necessary
+login local
+exit
+!use enable secret to enable password when moving from R3> to R3#
+enable secret cisco123
+
+#DHCP R2:
+enable
+config t
+ip dhcp pool R2-POOL
+network 192.168.2.0 255.255.255.0
+default-router 192.168.2.1
+dns-server 8.8.8.8
+exit
+
+#OSPF R2:
+enable
+config t
+router ospf 2
+network 192.168.7.0 0.0.0.255 area 0
+network 192.168.2.0 0.0.0.255 area 2
+network 192.168.8.0 0.0.0.255 area 0
+exit
+
+#telnet and ssh R2:
+enable
+config t
+! Set Domain name for SSH
+ip domain-name ccnalab.local
+! Generate SSH keys
+crypto key generate rsa
+line vty 0 1
+username ccna password cisco123
+line vty 0 1
+username ccnp password cisco123
+! You can use transport input telnet or ssh or all
+transport input all
+! login local is necessary
+login local
+exit
+!use enable secret to enable password when moving from R3> to R3#
+enable secret cisco123
+
+#DHCP R3:
+enable
+config t
+ip dhcp pool R3-POOL
+network 192.168.3.0 255.255.255.0
+default-router 192.168.3.1
+dns-server 8.8.8.8
+exit
+
+#OSPF R3:
+enable
+config t
+router ospf 3
+network 192.168.8.0 0.0.0.255 area 0
+network 192.168.3.0 0.0.0.255 area 3
+network 192.168.9.0 0.0.0.255 area 0
+exit
+
+#telnet and ssh R3:
+enable
+config t
+! Set Domain name for SSH
+ip domain-name ccnalab.local
+! Generate SSH keys
+crypto key generate rsa
+line vty 0 1
+username ccna password cisco123
+line vty 0 1
+username ccnp password cisco123
+! You can use transport input telnet or ssh or all
+transport input all
+! login local is necessary
+login local
+exit
+!use enable secret to enable password when moving from R3> to R3#
+enable secret cisco123
+
+#DHCP R4:
+enable
+config t
+ip dhcp pool R4-POOL
+network 192.168.4.0 255.255.255.0
+default-router 192.168.4.1
+dns-server 8.8.8.8
+exit
+
+#OSPF R4:
+enable
+config t
+router ospf 4
+network 192.168.9.0 0.0.0.255 area 0
+network 192.168.10.0 0.0.0.255 area 0
+network 192.168.4.0 0.0.0.255 area 4
+exit
+
+#telnet and ssh R4:
+enable
+config t
+! Set Domain name for SSH
+ip domain-name ccnalab.local
+! Generate SSH keys
+crypto key generate rsa
+line vty 0 1
+username ccna password cisco123
+line vty 0 1
+username ccnp password cisco123
+! You can use transport input telnet or ssh or all
+transport input all
+! login local is necessary
+login local
+exit
+!use enable secret to enable password when moving from R3> to R3#
+enable secret cisco123
+
+#DHCP R5:
+enable
+config t
+ip dhcp pool R5-POOL
+network 192.168.5.0 255.255.255.0
+default-router 192.168.5.1
+dns-server 8.8.8.8
+exit
+
+#OSPF R5:
+enable
+config t
+router ospf 5
+network 192.168.10.0 0.0.0.255 area 0
+network 192.168.5.0 0.0.0.255 area 5
+network 192.168.11.0 0.0.0.255 area 0
+exit
+
+#telnet and ssh R5:
+enable
+config t
+! Set Domain name for SSH
+ip domain-name ccnalab.local
+! Generate SSH keys
+crypto key generate rsa
+line vty 0 1
+username ccna password cisco123
+line vty 0 1
+username ccnp password cisco123
+! You can use transport input telnet or ssh or all
+transport input all
+! login local is necessary
+login local
+exit
+!use enable secret to enable password when moving from R3> to R3#
+enable secret cisco123
+
+#DHCP R6:
+enable
+config t
+ip dhcp pool R6-POOL
+network 192.168.6.0 255.255.255.0
+default-router 192.168.6.1
+dns-server 8.8.8.8
+exit
+
+#OSPF R6:
+enable
+config t
+router ospf 6
+network 192.168.6.0 0.0.0.255 area 6
+network 192.168.11.0 0.0.0.255 area 0
+network 192.168.13.0 0.0.0.255 area 0
+exit
+
+#telnet and ssh R6:
+enable
+config t
+! Set Domain name for SSH
+ip domain-name ccnalab.local
+! Generate SSH keys
+crypto key generate rsa
+line vty 0 1
+username ccna password cisco123
+line vty 0 1
+username ccnp password cisco123
+! You can use transport input telnet or ssh or all
+transport input all
+! login local is necessary
+login local
+exit
+!use enable secret to enable password when moving from R3> to R3#
+enable secret cisco123
